@@ -2,17 +2,18 @@ import axios from 'axios';
 import { AUTH } from './auth';
 
 const ENDPOINTS = {
-  allWorkouts: '/api/workouts',
-  singleWorkout: (id) => `/api/workouts/${id}`,
-  workoutDirectory: '/api/workout-directory',
-  workoutsBySelectedMuscleGroup: `/api/workout-directory/workouts`,
-  workoutLog: '/api/workout-log',
-  account: (userId) => `/api/account/${userId}`,
+  allWorkouts: `${process.env.REACT_APP_BASE_URL}/api/workouts`,
+  singleWorkout: (id) => `${process.env.REACT_APP_BASE_URL}/api/workouts/${id}`,
+  workoutDirectory: `${process.env.REACT_APP_BASE_URL}/api/workout-directory`,
+  workoutsBySelectedMuscleGroup: `${process.env.REACT_APP_BASE_URL}/api/workout-directory/workouts`,
+  workoutLog: `${process.env.REACT_APP_BASE_URL}/api/workout-log`,
+  account: (userId) =>
+    `${process.env.REACT_APP_BASE_URL}/api/account/${userId}`,
   // createReview: (id) => `/api/workouts/${id}/reviews`,
   // singleReview: (workoutId, reviewId) =>
   //   `/api/workouts/${workoutId}/reviews/${reviewId}`,
-  login: '/api/login',
-  register: '/api/register',
+  login: `${process.env.REACT_APP_BASE_URL}/api/login`,
+  register: `${process.env.REACT_APP_BASE_URL}/api/register`,
   search: (query) => `/api/workouts/search?search=${query}`,
   cloudinary: `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`,
 };
